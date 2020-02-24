@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.ItemsPageAdmin"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    
+
+    <StackLayout>
+        <Label FontSize="Header" FontFamily="Castellar" HorizontalTextAlignment="Center" TextColor="White" Margin="0,15,0,0">Dobrodošli</Label>
+
+        <Label FontSize="Medium" FontFamily="Verdana" HorizontalTextAlignment="Center" TextColor="White" Margin="0,40,0,0">O nama</Label>
+        <Label FontSize="Small" FontFamily="Verdana" HorizontalTextAlignment="Center" TextColor="White" Margin="0,10,0,0">Pozorište u Mostaru središnja je i najstarija pozorišna institucija u BiH, u kojoj djeluju tri ansambla: operni, dramski i baletni.
+
+Godišnje se izvede najmanje dvanaest premijera, što uz dvadesetak repriznih naslova rezultira s više od dvjesto dvadeset scenskih izvedbi po sezoni. Kao središnja nacionalna kuća pozorište u Mostaru njeguje raznovrstan program te uz uprizorenja djela domaćih autora različitih stilova i razdoblja, izvodi i djela klasičnoga i suvremenog svjetskog repertoara.</Label>
+
+        <Label FontSize="Medium" FontFamily="Verdana" HorizontalTextAlignment="Center" TextColor="White" Margin="0,30,0,0">Historija</Label>
+        <Label FontSize="Small" FontFamily="Verdana" HorizontalTextAlignment="Center" TextColor="White" Margin="0,10,0,0">Pozorište u Mostaru najstarija je hrvatska pozorišna ustanova koja službeno započinje s radom 16. decembra 1860. Pozorište je zakonski utemeljeno 24. augusta 1861. Međutim, nacionalno je pozorište starije barem dva desetljeća, istina tek kao zamisao i niz poticaja te pokušaja da se ta zamisao ostvari. Njegovo je utemeljenje bila jednom od najvažnijih zadaća preporodnoga kulturnog programa.</Label>
+        <ListView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                VerticalOptions="FillAndExpand"
+                HasUnevenRows="true"
+                RefreshCommand="{Binding LoadItemsCommand}"
+                IsPullToRefreshEnabled="true"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                CachingStrategy="RecycleElement"
+                ItemSelected="OnItemSelected">
+            <!--<d:ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>First Item</x:String>
+                    <x:String>Second Item</x:String>
+                    <x:String>Third Item</x:String>
+                    <x:String>Fourth Item</x:String>
+                    <x:String>Fifth Item</x:String>
+                    <x:String>Sixth Item</x:String>
+                </x:Array>
+            </d:ListView.ItemsSource>-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Text}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                            <Label Text="{Binding Description}" 
+                                d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

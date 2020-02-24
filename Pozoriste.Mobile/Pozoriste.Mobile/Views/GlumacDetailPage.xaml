@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Pozoriste.Mobile.Converters"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.GlumacDetailPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+       
+            <!--<StackLayout Grid.Row="0" Grid.Column="0">
+
+                <StackLayout Orientation="Horizontal">
+                <Label Text="{Binding Glumac.Ime}" FontSize="Medium"></Label>
+                    <Label Text="{Binding Glumac.Prezime}" FontSize="Medium"></Label>
+                </StackLayout>
+                <Image WidthRequest="300" Source="{Binding Glumac.Slika, Converter={StaticResource imgConv}}"></Image>
+
+                <Label Text="Datum rođenja: "  FontSize="14" ></Label>
+                <Label Text="{Binding Glumac.DatumRodjenja}"></Label>
+
+                <Label Text="Broj ugovora: "  FontSize="14" ></Label>
+                <Label Text="{Binding Glumac.BrojUgovora}"></Label>
+
+                <Label Text="Email: "  FontSize="14" ></Label>
+                <Label Text="{Binding Glumac.Email}"></Label>
+
+
+
+            </StackLayout>-->
+
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" Padding="20" >
+                    <Label Text="{Binding Glumac.Ime}" FontSize="Medium" FontAttributes="Bold"></Label>
+                    <Label Text="{Binding Glumac.Prezime}" FontSize="Medium" FontAttributes="Bold"></Label>
+                </StackLayout>
+
+                <Image HeightRequest="300"  WidthRequest="300" Margin="25"  Source="{Binding Glumac.Slika, Converter={StaticResource imgConv}}"></Image>
+
+                <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand" >
+
+                    <StackLayout Padding="8">
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Datum rođenja:           " FontAttributes="Bold" FontSize="Body"/>
+                                        <Span Text="{Binding Glumac.DatumRodjenja}"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout Padding="8">
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Broj ugovora:           " FontAttributes="Bold" FontSize="Body"/>
+                                        <Span Text="{Binding Glumac.BrojUgovora}"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout Padding="8">
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Email:           " FontAttributes="Bold" FontSize="Body"/>
+                                        <Span Text="{Binding Glumac.Email}"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

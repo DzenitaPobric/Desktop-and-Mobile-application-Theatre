@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.PrikazPrikazivanjePage">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding PrikazivanjeList}" >
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Predstava: "  FontSize="12" ></Label>
+                                <Label Text="{Binding NazivPredstave}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Sala: "  FontSize="12" ></Label>
+                                <Label Text="{Binding NazivSale}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Datum prikazivanja: "  FontSize="12" ></Label>
+                                <Label Text="{Binding DatumPrikazivanja}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+
+                            <StackLayout Orientation="Horizontal" >
+                                <Label Text="Cijena: "  FontSize="12"  ></Label>
+                                <Label Text="{Binding Cijena}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+
+                            <Button Clicked="Button_Clicked" Text="Uredi" CornerRadius="7" HeightRequest="30" WidthRequest="60" Padding="3" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+                            <Button Clicked="Button_Clicked_1" Text="Obriši" CornerRadius="7" HeightRequest="30" WidthRequest="60" Padding="3" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+                        </StackLayout>
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
+
+
+
+

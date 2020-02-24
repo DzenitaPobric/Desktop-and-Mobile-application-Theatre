@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.PrikazivanjeDetailPage">
+    <ContentPage.Content>
+        <!--<Grid  Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Predstava: "  FontSize="14" ></Label>
+                    <Label Text="{Binding Prikazivanje.NazivPredstave}"></Label>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Datum prikazivanja: "  FontSize="14" ></Label>
+                    <Label Text="{Binding Prikazivanje.DatumPrikazivanja}"></Label>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Cijena: "  FontSize="14" ></Label>
+                    <Label Text="{Binding Prikazivanje.Cijena}"></Label>
+                </StackLayout>          
+            </StackLayout>-->
+
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+                <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand" >
+
+                    <StackLayout Padding="8">
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Predstava:           " FontAttributes="Bold" FontSize="Micro"/>
+                                        <Span Text="{Binding Prikazivanje.NazivPredstave}"  FontSize="Micro"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout Padding="8">
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Datum prikazivanja:           " FontAttributes="Bold" FontSize="Micro"/>
+                                        <Span Text="{Binding Prikazivanje.DatumPrikazivanja}"  FontSize="Micro"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout Padding="8">
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Cijena:           " FontAttributes="Bold" FontSize="Micro"/>
+                                        <Span Text="{Binding Prikazivanje.Cijena}"  FontSize="Micro"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+
+
+                    <StackLayout Grid.Row="1" Grid.Column="0">
+                        <Image Source="reservation.png">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding RezervisiCommand}"></TapGestureRecognizer>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+
+                        <Label Text="(Klikom na sliku, šaljete zahtjev za rezervavciju) " FontAttributes="Italic" FontSize="Micro" ></Label>
+
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+
+        <!--</Grid>-->
+    </ContentPage.Content>
+</ContentPage>

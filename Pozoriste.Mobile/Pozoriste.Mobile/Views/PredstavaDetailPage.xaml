@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:i18n="clr-namespace:Pozoriste.Mobile.Helpers"  
+             xmlns:vm="clr-namespace:Pozoriste.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.PredstavaDetailPage">
+    <ContentPage.BindingContext>
+        <vm:PredstavaDetailViewModel></vm:PredstavaDetailViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <ScrollView BackgroundColor="White">
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand" >
+
+                <StackLayout Padding="8">
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <FormattedString.Spans>                         
+                            <Span Text="Žanr:           " FontAttributes="Bold" FontSize="Body"/>
+                            <Span Text="{Binding Predstava.NazivZanra}"></Span>                           
+                        </FormattedString.Spans>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            </StackLayout>
+
+            <StackLayout Padding="8">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Naziv:           " FontAttributes="Bold" FontSize="Body"/>
+                                <Span Text="{Binding Predstava.Naziv}"></Span>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+                
+            <StackLayout Padding="8">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Opis:           " FontAttributes="Bold" FontSize="Body"/>
+                                <Span Text="{Binding Predstava.Opis}"></Span>
+
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Padding="8">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Režiser:           " FontAttributes="Bold" FontSize="Body"/>
+                                <Span Text="{Binding Predstava.Reziser}"></Span>
+
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Padding="8">
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Trajanje:           " FontAttributes="Bold" FontSize="Body"/>
+                                <Span Text="{Binding Predstava.Trajanje}"></Span>
+
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+
+
+
+                <Button Clicked="Button_Clicked" Text="Dodaj komentar" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Blue" ></Button>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

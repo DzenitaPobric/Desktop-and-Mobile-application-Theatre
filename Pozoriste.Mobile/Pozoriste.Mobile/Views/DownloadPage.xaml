@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Pozoriste.Mobile.Converters"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.DownloadPage">
+    <ContentPage.Resources>
+        <converters:ValueProgressBarConverter x:Key="ValueProgressBarConverter" />
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label Text="Downloading file ..." FontSize="Large"
+               HorizontalOptions="Center" VerticalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+
+        <StackLayout Grid.Row="1" Spacing="20">
+
+            <ProgressBar Progress="{Binding ProgressValue, Converter={StaticResource ValueProgressBarConverter}}" Margin="10,0"/>
+
+            <Label Text="{Binding ProgressValue, StringFormat='{0:F2}%'}" HorizontalOptions="Center" />
+
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

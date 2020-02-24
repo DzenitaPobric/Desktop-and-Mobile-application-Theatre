@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Pozoriste.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.PrikazGrad">
+    <!--<ContentPage.BindingContext>
+        <vm:GradViewModel></vm:GradViewModel>
+    </ContentPage.BindingContext>-->
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding GradList}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout Padding="10" Orientation="Vertical">
+
+
+                            <StackLayout Orientation="Horizontal">
+
+
+
+                                <Label Text="Naziv: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Naziv}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+
+                                <!--<Frame HeightRequest="40" WidthRequest="80" CornerRadius="7" HorizontalOptions="End" VerticalOptions="End" Margin="0" Padding="5" BackgroundColor="Blue">-->
+                                <Button Clicked="Button_Clicked" Text="Uredi" CornerRadius="7" HeightRequest="30" WidthRequest="60" Padding="3" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+                                <Button Clicked="Button_Clicked_1" Text="Obriši" CornerRadius="7" HeightRequest="30" WidthRequest="60" Padding="3" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+                                <!--</Frame>-->
+                            </StackLayout>
+
+                        </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Pozoriste.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.DodajSponzorPage">
+    <ContentPage.BindingContext>
+        <vm:SponzorViewModel></vm:SponzorViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+
+                <Label Text="Naziv"></Label>
+                <Entry x:Name="Naziv" Text="{Binding Naziv}"></Entry>
+
+                <Label Text="BrojTelefona"></Label>
+                <Entry x:Name="BrojTelefona" Text="{Binding BrojTelefona}"></Entry>
+
+                <Button Clicked="Button_Clicked"  HorizontalOptions="FillAndExpand" Text="Sačuvaj" BackgroundColor="LightGray"></Button>
+                <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

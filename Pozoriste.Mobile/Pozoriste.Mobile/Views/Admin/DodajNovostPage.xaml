@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Pozoriste.Mobile.ViewModels.Admin"
+             xmlns:converters="clr-namespace:Pozoriste.Mobile.Converters"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.DodajNovostPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+
+                <Label Text="Naziv"></Label>
+                <Entry x:Name="Naziv" Text="{Binding Ime}"></Entry>
+
+                <Label Text="Tekst"></Label>
+                <Entry x:Name="Tekst" Text="{Binding Prezime}"></Entry>
+
+                <Label Text="Datum i vrijeme objave"></Label>
+                <DatePicker x:Name="DatumVrijemeObjave" IsEnabled="True"></DatePicker>
+
+
+                <Image WidthRequest="300" Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
+                <Button Clicked="Button_Clicked_1" Text="Odaberi Sliku"/>
+
+                <Button Clicked="Button_Clicked"  HorizontalOptions="FillAndExpand" Text="Sačuvaj" BackgroundColor="LightGray"></Button>
+                <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+   

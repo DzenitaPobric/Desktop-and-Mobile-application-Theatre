@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Pozoriste.Mobile.Converters"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.DodajGlumcaPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+
+                <Label Text="Ime"></Label>
+                <Entry x:Name="Ime" Text="{Binding Ime}"></Entry>
+
+                <Label Text="Prezime"></Label>
+                <Entry x:Name="Prezime" Text="{Binding Prezime}"></Entry>
+
+                <Label Text="Email"></Label>
+                <Entry x:Name="Email" Text="{Binding Email}"></Entry>
+
+                <Label Text="Datum rođenja"></Label>
+                <DatePicker x:Name="DatumRodjena"></DatePicker>
+
+                <Label Text="Broj ugovora"></Label>
+                <Entry x:Name="BrojUgovora" Text="{Binding BrojUgovora}"></Entry>
+
+                <Image WidthRequest="300" Source="{Binding Slika, Converter={StaticResource imgConv}}"></Image>
+                <Button Clicked="Button_Clicked_1" Text="Odaberi Sliku"/>
+
+                <Button Clicked="Button_Clicked"  HorizontalOptions="FillAndExpand" Text="Sačuvaj" BackgroundColor="LightGray"></Button>
+                <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+   

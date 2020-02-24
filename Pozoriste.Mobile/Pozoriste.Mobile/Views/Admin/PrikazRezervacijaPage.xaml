@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Pozoriste.Mobile.ViewModels.Admin"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.PrikazRezervacijaPage"
+             Title="Rezervacije"
+             >
+    <ContentPage.BindingContext>
+        <viewModels:RezervacijaViewModelAdmin></viewModels:RezervacijaViewModelAdmin>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding RezervacijaList}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" Orientation="Vertical">
+                            
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Kupac: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Kupac}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Prikazivanje: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Prikazivanje}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+                            
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Datum rezervacije: "  FontSize="12" ></Label>
+                                <Label Text="{Binding DatumRezervacije}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Broj rezervacije: "  FontSize="12" ></Label>
+                                <Label Text="{Binding BrojRezervacije}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Odobrena: "  FontSize="12" ></Label>
+                                <Label Text="{Binding Odobrena}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                            </StackLayout>
+
+                            <Button Clicked="Button_Clicked" Text="Odobri slanjem emaila" IsVisible="{Binding NotOdobren}" CornerRadius="7" HeightRequest="40" WidthRequest="150" Padding="3" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+
+
+
+                            <Button Clicked="Button_Clicked_1" Text="Odobri slanjem SMS-a" IsVisible="{Binding NotOdobren}" CornerRadius="7" HeightRequest="40" WidthRequest="150" Padding="3" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+
+                        </StackLayout>
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Pozoriste.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.OcijeniPredstavuPage"
+             Title="Ocjenjivanje predstava"
+             >
+    <ContentPage.BindingContext>
+        <vm:OcijeniPredstavuVM></vm:OcijeniPredstavuVM>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+
+                              
+                <Label Text="Ocjena"></Label>
+                <Entry  x:Name="Ocjena" Text="{ Binding Ocjena}"></Entry>
+
+                <Button Clicked="Button_Clicked" Text="Sačuvaj" CornerRadius="7" HeightRequest="30" WidthRequest="80" Padding="3" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

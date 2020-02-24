@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Pozoriste.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.MojeRezervacijePage"
+             Title="Moje rezervacije">
+    <ContentPage.BindingContext>
+        <vm:MojeRezervacijeViewModel></vm:MojeRezervacijeViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout>
+            <StackLayout Margin="10" HorizontalOptions="Center" Padding="10" >
+
+               
+            </StackLayout>
+
+            <StackLayout Padding="5">
+                <ListView ItemsSource="{Binding RezervacijaList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <ViewCell  >
+                                <StackLayout  BackgroundColor="{Binding color}"  x:Name="u" Padding="10">
+                                    <Label Text="{Binding rezervacija}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16" />
+                                    <!--<Label Text="Datum rezervacije: "  FontSize="14" ></Label>
+                                    <Label Text="{Binding DatumRezervacije}" 
+                                d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label Text="Odobrena: "  FontSize="14" ></Label>
+                                    <Label Text="{Binding Odobrena}" 
+                                d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />
+                                    <Label Text="Broj rezervacije: "  FontSize="14" ></Label>
+                                    <Label Text="{Binding BrojRezervacije}" 
+                                d:Text="Item descripton"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />-->
+
+                                    <StackLayout Padding="8">
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="Datum rezervacije:      " FontAttributes="Bold" FontSize="Micro"/>
+                                                        <Span Text="{Binding DatumRezervacije}"  FontSize="Micro"></Span>
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </StackLayout>
+
+                                    <StackLayout Padding="8">
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="Odobrena:                     " FontAttributes="Bold" FontSize="Micro"/>
+                                                        <Span Text="{Binding Odobrena}"  FontSize="Micro"></Span>
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </StackLayout>
+
+                                    <StackLayout Padding="8">
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span Text="Broj rezervacije:          " FontAttributes="Bold" FontSize="Micro"/>
+                                                        <Span Text="{Binding BrojRezervacije}"  FontSize="Micro"></Span>
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+                                    </StackLayout>
+
+                                    <Button Clicked="Button_Clicked" Text="Odaberi sjedište" HeightRequest="40" WidthRequest="130" CornerRadius="7" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+                                    <Button Clicked="Button_Clicked_1" Text="Otkaži" HeightRequest="40" WidthRequest="130" CornerRadius="7" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+
+                                </StackLayout>
+                            </ViewCell>
+                            
+                        </DataTemplate>
+                       
+                    </ListView.ItemTemplate>
+                    
+                </ListView>
+                  
+            </StackLayout>
+
+        </StackLayout>
+        
+        
+        <!--<ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+             
+                <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand" >
+
+                    <StackLayout Padding="8">
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Predstava:           " FontAttributes="Bold" FontSize="Micro"/>
+                                        <Span Text="{Binding Prikazivanje.NazivPredstave}"  FontSize="Micro"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout Padding="8">
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Datum prikazivanja:           " FontAttributes="Bold" FontSize="Micro"/>
+                                        <Span Text="{Binding Prikazivanje.DatumPrikazivanja}"  FontSize="Micro"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+                    <StackLayout Padding="8">
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Cijena:           " FontAttributes="Bold" FontSize="Micro"/>
+                                        <Span Text="{Binding Prikazivanje.Cijena}"  FontSize="Micro"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+
+
+
+                    <StackLayout Grid.Row="1" Grid.Column="0">
+                <Image Source="reservation.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RezervisiCommand}"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+
+
+                    <Label Text="(Klikom na sliku, šaljete zahtjev za rezervavciju!) " FontAttributes="Italic" FontSize="Micro" ></Label>
+              
+            </StackLayout>
+
+          </StackLayout>
+          </StackLayout>
+        </ScrollView>-->
+    </ContentPage.Content>
+</ContentPage>

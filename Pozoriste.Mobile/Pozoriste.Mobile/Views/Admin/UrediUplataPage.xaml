@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.UrediUplataPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+
+                <StackLayout>
+
+
+                    <Label  Text="Naziv"></Label>
+                    <Entry x:Name="Naziv" Text="{Binding Uplata.Naziv}"></Entry>
+                    <Label  Text="Svrha"></Label>
+                    <Entry x:Name="Svrha" Text="{Binding Uplata.Svrha}"></Entry>
+                    <Label  Text="Iznos"></Label>
+                    <Entry x:Name="Iznos" Text="{Binding Uplata.Iznos}"></Entry>
+                    <Label  Text="Datum uplate"></Label>
+                    <DatePicker x:Name="DatumUplate" Date="{Binding Uplata.DatumUplate}"></DatePicker>
+                    <Label Text="Sponzor"></Label>
+                    <Picker x:Name="Sponzori" ItemsSource="{Binding SponzorList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Sačuvaj " Clicked="Button_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

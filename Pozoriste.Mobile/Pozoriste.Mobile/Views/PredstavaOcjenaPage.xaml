@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.PredstavaOcjenaPage">
+    <ContentPage.Content>
+        <StackLayout>
+        <Label Text="Žanr"></Label>
+        <Picker ItemsSource="{Binding ZanrList}" SelectedItem="{Binding SelectedZanr}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+        <ListView ItemsSource="{Binding PredstavaList}" >
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="8" Orientation="Vertical">
+                       
+
+
+                            <StackLayout Padding="6">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="Naziv:                     " FontAttributes="Bold" FontSize="Caption"/>
+                                                <Span Text="{Binding Naziv}"  FontSize="Caption"></Span>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+
+                            <StackLayout Padding="6">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="Opis:                       " FontAttributes="Bold" FontSize="Caption"/>
+                                                <Span Text="{Binding Opis}"  FontSize="Caption"></Span>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+
+                            <StackLayout Padding="6">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="Režiser:                    " FontAttributes="Bold" FontSize="Caption"/>
+                                                <Span Text="{Binding Reziser}"  FontSize="Caption"></Span>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+
+                            <StackLayout Padding="6">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="Trajanje:                  " FontAttributes="Bold" FontSize="Caption"/>
+                                                <Span Text="{Binding Trajanje}"  FontSize="Caption"></Span>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+
+                            <StackLayout Padding="6">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="Žanr:                        " FontAttributes="Bold" FontSize="Caption"/>
+                                                <Span Text="{Binding NazivZanra}"  FontSize="Caption"></Span>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+
+                            <StackLayout Padding="6">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <FormattedString.Spans>
+                                                <Span Text="Prosjecna ocjena:      " FontAttributes="Bold" FontSize="Caption"/>
+                                                <Span Text="{Binding ProsjecnaOcjena, StringFormat='{0:F2}'}"  FontSize="Caption"></Span>
+                                            </FormattedString.Spans>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+
+                            <Button Clicked="Button_Clicked" Text="Ocijeni predstavu" CornerRadius="7" HeightRequest="40" WidthRequest="140" Padding="5" TextColor="White" BackgroundColor="Blue" HorizontalOptions="Center" VerticalOptions="Center"  ></Button>
+                        </StackLayout>
+
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

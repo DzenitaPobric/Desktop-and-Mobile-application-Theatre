@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.UrediPrikazivanjePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+
+                <StackLayout>
+                    <Label Text="Sala"></Label>
+                    <Picker x:Name="Sale" ItemsSource="{Binding SalaList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+                    <Label Text="Predstava"></Label>
+                    <Picker x:Name="Predstave" ItemsSource="{Binding PredstavaList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+                    <Label Text="Datum prikazivanja"></Label>
+                    <!--<DatePicker x:Name="DatumPrikazivanja"  Date="{Binding Prikazivanje.DatumPrikazivanja}"></DatePicker>-->
+                    <DatePicker x:Name="DatumPrikazivanja" Date="{Binding Prikazivanje.DatumPrikazivanja}"></DatePicker>
+                    <TimePicker x:Name="VrijemePrikazivanja" Time="{Binding Prikazivanje.VrijemePrikazivanja}"></TimePicker>
+
+                    <Label Text="Cijena"></Label>
+                    <Entry  x:Name="Cijena" Text="{ Binding Prikazivanje.Cijena}"></Entry>
+
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Sačuvaj " Clicked="Button_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Pozoriste.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.KorisnickiProfilPage"
+             Title="Korisnički profil">
+    <ContentPage.BindingContext>
+        <vm:KorisnickiProfilVM></vm:KorisnickiProfilVM>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+                <StackLayout>
+                    <Label Text="Uredi profil" HorizontalOptions="CenterAndExpand" FontSize="Medium" />
+                </StackLayout>
+                <StackLayout>
+                    <Label  Text="Ime"></Label>
+                    <Entry x:Name="Ime" Text="{Binding kupac.Ime}"></Entry>
+                    <Label  Text="Prezime"></Label>
+                    <Entry x:Name="Prezime" Text="{Binding kupac.Prezime}"></Entry>
+                    <Label  Text="Telefon"></Label>
+                    <Entry x:Name="Telefon" Text="{Binding kupac.BrojTelefona}"></Entry>
+                    <Label  Text="Email"></Label>
+                    <Entry x:Name="Email" Text="{Binding kupac.Email}"></Entry>
+                    <Label  Text="Broj tokena"></Label>
+                    <Entry x:Name="BrojTokena" Text="{Binding kupac.BrojTokena}" IsReadOnly="true"></Entry>
+                    <Label  Text="Korisnicko ime"></Label>
+                    <Entry x:Name="KorisnickoIme" Text="{Binding kupac.KorisnickoIme}"></Entry>
+                    <Label  Text="Datum registracije"></Label>
+                    <Entry x:Name="DatumRegistracije" Text="{Binding kupac.DatumRegistracije}" IsReadOnly="true"></Entry>
+                    <Label  Text="Password"></Label>
+                    <Entry x:Name="Password"  Placeholder="Nova ili stara lozinka" IsPassword="True"></Entry>
+                    <Label  Text="Potvrda passworda"></Label>
+                    <Entry x:Name="PasswordPotvrda" Placeholder="Potvrda lozinke" IsPassword="True"></Entry>
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Sačuvaj " Clicked="Button_Clicked" TextColor="White" BackgroundColor="Blue"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

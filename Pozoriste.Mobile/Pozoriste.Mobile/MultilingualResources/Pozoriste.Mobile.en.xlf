@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="bs-Latn-BA" target-language="en" original="POZORISTE.MOBILE/TESTRESOURCE.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6915.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="POZORISTE.MOBILE/TESTRESOURCE.RESX" datatype="resx">
+        <trans-unit id="About_Text" translate="yes" xml:space="preserve">
+          <source>Pozorište u Mostaru središnja je i najstarija pozorišna institucija u BiH, u kojoj djeluju tri ansambla: operni, dramski i baletni.
+Kao središnja nacionalna kuća pozorište u Mostaru njeguje raznovrstan program uz djela domaćih autora različitih stilova i razdoblja.</source>
+          <target state="translated">Theater in Mostar is the central and the oldest institutions in Bosnia and Herzegovina. There are three ensembles: opera, drama and ballet.
+As a central national house, theater nurtures a different program and with the performances of local authors of different styles and periods.</target>
+        </trans-unit>
+        <trans-unit id="About_us" translate="yes" xml:space="preserve">
+          <source>O nama</source>
+          <target state="translated">About us</target>
+        </trans-unit>
+        <trans-unit id="Actors" translate="yes" xml:space="preserve">
+          <source>Glumci</source>
+          <target state="translated">Actors</target>
+        </trans-unit>
+        <trans-unit id="Documents" translate="yes" xml:space="preserve">
+          <source>Dokumenti</source>
+          <target state="translated">Documents</target>
+        </trans-unit>
+        <trans-unit id="Gallery" translate="yes" xml:space="preserve">
+          <source>Galerija</source>
+          <target state="translated">Gallery</target>
+        </trans-unit>
+        <trans-unit id="Genre" translate="yes" xml:space="preserve">
+          <source>Žanr</source>
+          <target state="new">Žanr</target>
+        </trans-unit>
+        <trans-unit id="Giveaways" translate="yes" xml:space="preserve">
+          <source>Nagradne igre</source>
+          <target state="translated">Giveaways</target>
+        </trans-unit>
+        <trans-unit id="Grading" translate="yes" xml:space="preserve">
+          <source>Ocjenjivanje</source>
+          <target state="translated">Grading</target>
+        </trans-unit>
+        <trans-unit id="History" translate="yes" xml:space="preserve">
+          <source>Historija</source>
+          <target state="translated">History</target>
+        </trans-unit>
+        <trans-unit id="History_Text" translate="yes" xml:space="preserve">
+          <source>Javna ustanova Narodno pozorište u Mostaru osnovana je 28. novembra 1949. godine.</source>
+          <target state="translated">The Public Institution National Theater in Mostar was founded on November 28, 1949.</target>
+        </trans-unit>
+        <trans-unit id="Log_out" translate="yes" xml:space="preserve">
+          <source>Odjava</source>
+          <target state="translated">Log out</target>
+        </trans-unit>
+        <trans-unit id="My_account" translate="yes" xml:space="preserve">
+          <source>Korisnički profil</source>
+          <target state="translated">My account</target>
+        </trans-unit>
+        <trans-unit id="My_reservations" translate="yes" xml:space="preserve">
+          <source>Moje rezervacije</source>
+          <target state="translated">My reservations</target>
+        </trans-unit>
+        <trans-unit id="My_tickets" translate="yes" xml:space="preserve">
+          <source>Moje ulaznice</source>
+          <target state="translated">My tickets</target>
+        </trans-unit>
+        <trans-unit id="News" translate="yes" xml:space="preserve">
+          <source>Novosti</source>
+          <target state="translated">News</target>
+        </trans-unit>
+        <trans-unit id="Notifications" translate="yes" xml:space="preserve">
+          <source>Notifikacije</source>
+          <target state="translated">Notifications</target>
+        </trans-unit>
+        <trans-unit id="Our_location" translate="yes" xml:space="preserve">
+          <source>Kako do nas</source>
+          <target state="translated">Our location</target>
+        </trans-unit>
+        <trans-unit id="Performances" translate="yes" xml:space="preserve">
+          <source>Prikazivanja</source>
+          <target state="translated">Performances</target>
+        </trans-unit>
+        <trans-unit id="Shows" translate="yes" xml:space="preserve">
+          <source>Predstave</source>
+          <target state="translated">Shows</target>
+        </trans-unit>
+        <trans-unit id="Welcome" translate="yes" xml:space="preserve">
+          <source>Dobrodošli</source>
+          <target state="translated">Welcome</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

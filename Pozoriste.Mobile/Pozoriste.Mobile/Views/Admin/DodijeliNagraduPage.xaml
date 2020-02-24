@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.DodijeliNagraduPage">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding KupacNagradnaIgraList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                <Label Text=" Dodijelili ste nagradu: " FontSize="Body"></Label>
+                                <Label Text="{Binding nagrada}" 
+                                d:Text="Item descripton"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="Body" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+
+                                    <Label Text=" Kupcu : " FontSize="Body"></Label>
+                                <Label Text="{Binding kupac}" 
+                                d:Text="{Binding .}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="Body"/>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+       
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.UrediPredstavaPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+
+                <StackLayout>
+
+
+                    <Label  Text="Naziv"></Label>
+                    <Entry x:Name="Naziv" Text="{Binding Predstava.Naziv}"></Entry>
+                    <Label  Text="Opis"></Label>
+                    <Entry x:Name="Opis" Text="{Binding Predstava.Opis}"></Entry>
+                    <Label  Text="Reziser"></Label>
+                    <Entry x:Name="Reziser" Text="{Binding Predstava.Reziser}"></Entry>
+                    <Label  Text="Trajanje"></Label>
+                    <Entry x:Name="Trajanje" Text="{Binding Predstava.Trajanje}"></Entry>
+                    <Label Text="Zanr"></Label>
+                    <Picker x:Name="Zanrovi" ItemsSource="{Binding ZanrList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Sačuvaj " Clicked="Button_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

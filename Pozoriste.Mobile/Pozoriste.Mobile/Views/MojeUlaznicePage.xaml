@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:Pozoriste.Mobile.ViewModels"
+             xmlns:local="clr-namespace:Pozoriste.Mobile.Converters"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.MojeUlaznicePage"
+             Title="Moje ulaznice">
+  
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImageConverter x:Key="imgConv"></local:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+ 
+   <ContentPage.Content>
+
+        <StackLayout>
+            <ListView ItemsSource="{Binding UlazniceList}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+
+                                <!--<StackLayout Orientation="Horizontal">
+                                <Label Text="Prikazivanje: "  FontSize="12" ></Label>
+                                    <Label Text="{Binding prikazivanje}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                                </StackLayout>
+
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Sjediste: "  FontSize="12" ></Label>
+                                    <Label Text="{Binding oznakaSjedista}" 
+                                           LineBreakMode="NoWrap"
+                                           Style="{DynamicResource ListItemDetailTextStyle}"
+                                           FontSize="13" />
+                                </StackLayout>-->
+
+                                <StackLayout Padding="8">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="Prikazivanje:         " FontAttributes="Bold" FontSize="Micro"/>
+                                                    <Span Text="{Binding prikazivanje}"  FontSize="Micro"></Span>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+
+                                <StackLayout Padding="8">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <FormattedString.Spans>
+                                                    <Span Text="Sjedište:                  " FontAttributes="Bold" FontSize="Micro"/>
+                                                    <Span Text="{Binding oznakaSjedista}"  FontSize="Micro"></Span>
+                                                </FormattedString.Spans>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                </StackLayout>
+
+                                <Image HeightRequest="150" Source="{Binding Qrkod, Converter={StaticResource imgConv}}"/>
+
+                            </StackLayout>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </StackLayout>
+       
+
+    </ContentPage.Content>
+</ContentPage>

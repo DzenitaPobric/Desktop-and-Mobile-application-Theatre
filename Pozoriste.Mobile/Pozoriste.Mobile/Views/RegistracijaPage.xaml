@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Pozoriste.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.RegistracijaPage">
+    <ContentPage.BindingContext>
+        <vm:RegistracijaViewModel></vm:RegistracijaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+
+                <Label Text="Ime"></Label>
+                <Entry  x:Name="Ime" Text="{ Binding Ime}"></Entry>
+                <Label Text="Prezime"></Label>
+                <Entry x:Name="Prezime" Text="{ Binding Prezime}"></Entry>
+            
+                <Label Text="Telefon"></Label>
+                <Entry x:Name="BrojTelefona" Text="{ Binding BrojTelefona}"></Entry>
+                <Label Text="Email"></Label>
+                <Entry x:Name="Email" Text="{ Binding Email}"></Entry>
+                <Label Text="Korisničko ime"></Label>
+                <Entry x:Name="KorisnickoIme" Text="{Binding KorisnickoIme}"></Entry>
+                <Label  Text="Password"></Label>
+                <Entry x:Name="Password" Text="{Binding Password}" IsPassword="True"></Entry>
+                <Label  Text="Potvrda passworda"></Label>
+                <Entry x:Name="PasswordPotvrda" Text="{Binding PasswordPotvrda}" IsPassword="True"></Entry>
+
+                <Button Clicked="Button_Clicked"  HorizontalOptions="FillAndExpand" Text="Registriraj se" BackgroundColor="LightGreen"></Button>
+                <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+                <StackLayout>
+                    <StackLayout>
+                        <Button TextColor="White" BackgroundColor="Blue" Text="Već imam račun!" Clicked="Button_Clicked_1"></Button>
+                    </StackLayout>
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

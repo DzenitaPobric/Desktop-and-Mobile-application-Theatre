@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.UrediSalaPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20">
+
+                <StackLayout>
+
+
+                    <Label  Text="Naziv"></Label>
+                    <Entry x:Name="Naziv" Text="{Binding Sala.Naziv}"></Entry>
+                    <Label  Text="Kapacitet"></Label>
+                    <Entry x:Name="Kapacitet" Text="{Binding Sala.Kapacitet}"></Entry>
+                    <Label Text="Klimatizacija"></Label>
+                    <Entry x:Name="Klimatizacija" Text="{Binding Klimatizacija}"></Entry>
+                </StackLayout>
+                <StackLayout>
+                    <Button Text="Sačuvaj " Clicked="Button_Clicked"></Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

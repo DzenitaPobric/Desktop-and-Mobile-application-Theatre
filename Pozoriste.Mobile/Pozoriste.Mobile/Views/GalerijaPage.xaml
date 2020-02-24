@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"   
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"   
+             xmlns:local="clr-namespace:XamarinImageSlider"  
+             xmlns:controls="clr-namespace:Xamd.ImageCarousel.Forms.Plugin.Abstractions;assembly=Xamd.ImageCarousel.Forms.Plugin.Abstractions"  
+             x:Class="XamarinImageSlider.GalerijaPage"
+             Title="Galerija fotografija"
+             >
+    <ScrollView>
+    <StackLayout  Orientation="Vertical" Grid.Column="10" Grid.Row="0" Margin="8,8,0,0">
+
+        <StackLayout  Orientation="Horizontal" Grid.Column="0">
+            <Image HeightRequest="230" WidthRequest="300"   Source="pozoriste1.jpg"  Aspect="Fill" ></Image>
+            <Image HeightRequest="230" WidthRequest="300"   Source="pozoriste4.jpg"  Aspect="Fill" ></Image>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Grid.Column="0">
+
+            <Image HeightRequest="230" WidthRequest="300"  Source="pozoriste2.jpg"  Aspect="Fill"></Image>
+            <Image HeightRequest="230" WidthRequest="300" Source="pozoriste3.jpg"  Aspect="Fill"></Image>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Grid.Column="0">
+
+            <Image HeightRequest="230" WidthRequest="300"  Source="pozoriste5.jpg" Aspect="Fill"></Image>
+            <Image HeightRequest="230" WidthRequest="300" Source="pozoriste6.jpg"  Aspect="Fill"></Image>
+        </StackLayout>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>  

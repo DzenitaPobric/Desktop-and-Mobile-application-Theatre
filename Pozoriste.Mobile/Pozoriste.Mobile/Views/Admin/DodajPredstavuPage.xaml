@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModel="clr-namespace:Pozoriste.Mobile.ViewModels.Admin"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.Admin.DodajPredstavuPage">
+    <ContentPage.BindingContext>
+        <viewModel:PredstavaVIewModelAdmin></viewModel:PredstavaVIewModelAdmin>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout  HorizontalOptions="FillAndExpand" Padding="30" VerticalOptions="CenterAndExpand">
+
+                <Label Text="Naziv"></Label>
+                <Entry  x:Name="Naziv" Text="{ Binding Naziv}"></Entry>
+
+                <Label Text="Reziser"></Label>
+                <Entry  x:Name="Reziser" Text="{Binding Reziser}"></Entry>
+
+                <Label Text="Trajanje"></Label>
+                <Entry  x:Name="Trajanje" Text="{Binding Trajanje}"></Entry>
+
+                <Label Text="Opis"></Label>
+                <Entry  x:Name="Opis" Text="{Binding Opis}"></Entry>
+
+                <Label Text="Zanr"></Label>
+                <Picker x:Name="Zanrovi" ItemsSource="{Binding ZanrList}" ItemDisplayBinding="{Binding Naziv}"></Picker>
+
+
+                <Button Clicked="Button_Clicked"  HorizontalOptions="FillAndExpand" Text="Sačuvaj" BackgroundColor="LightGray"></Button>
+                <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

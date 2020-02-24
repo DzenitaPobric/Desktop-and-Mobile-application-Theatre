@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Pozoriste.Mobile.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Pozoriste.Mobile.Views.SjedistePage">
+    
+    <ContentPage.BindingContext>
+        <vm:SjedisteViewModel></vm:SjedisteViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="10">
+                <Grid x:Name="loadingOverlay" IsVisible="{Binding IsBusy}">
+                    <ActivityIndicator IsRunning="{Binding IsBusy}" />
+                </Grid>
+
+                
+                <Label Text="Molimo odaberite sjedište" HorizontalOptions="CenterAndExpand"  FontSize="Medium"></Label>
+
+                <Label Text="Zauzeto" BackgroundColor="Red" TextColor="White" HeightRequest="30" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" LineBreakMode="WordWrap" ></Label>
+                <Label Text="Slobono" BackgroundColor="Green"  TextColor="White" HeightRequest="30" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" LineBreakMode="WordWrap" ></Label>
+
+
+
+                <Label Text="PLATNO" Margin="10,0,0,10" HorizontalOptions="CenterAndExpand"  FontSize="Large"></Label>
+            </StackLayout>
+            <ScrollView VerticalScrollBarVisibility="Default" HorizontalScrollBarVisibility="Default">
+                <StackLayout BackgroundColor="White" HeightRequest="500" >
+                    <Grid x:Name="gridSjedala" HorizontalOptions="CenterAndExpand"></Grid>
+                </StackLayout>
+            </ScrollView>
+            <StackLayout x:Name="nastavidalje" IsVisible="False">
+                <Label x:Name="odabranoSjedalo" IsVisible="False"></Label>
+                <Label x:Name="poruka" BackgroundColor="Gray" HeightRequest="50" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" LineBreakMode="WordWrap" ></Label>
+                    <Button Clicked="Button_Clicked_2" Text="KUPI" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="Blue" Command="{Binding InitCommand}"></Button>
+                
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

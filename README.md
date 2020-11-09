@@ -15,7 +15,7 @@ Desktop:
                       Lozinka: test
 
 
-Mobilna aplikacija
+Mobilna aplikacija:
 
                       Korisničko ime: mobile
 

@@ -133,19 +133,7 @@ namespace ePozoriste.WebAPI.Mapper
                a.MapFrom(b => new Database.ePozoristeContext().Prikazivanje.Find(b.PrikazivanjeId).DatumPrikazivanja));
 
 
-            CreateMap<Database.Rezervacije, Model.Testna>()
-         .ForMember(s => s.Kupac, a =>
-             a.MapFrom(b => new Database.ePozoristeContext().Kupac.Find(b.KupacId).Ime + " " +
-             new Database.ePozoristeContext().Kupac.Find(b.KupacId).Prezime))
-          .ForMember(s => s.Prikazivanje, a =>
-               a.MapFrom(b => new Database.ePozoristeContext().Prikazivanje.Find(b.PrikazivanjeId).DatumPrikazivanja))
-          .ForMember(s => s.Cijena, a =>
-               a.MapFrom(b => new Database.ePozoristeContext().Prikazivanje.Find(b.PrikazivanjeId).Cijena))
-           .ForMember(s => s.Predstava, a =>
-                  a.MapFrom(b => new Database.ePozoristeContext().Prikazivanje.Include(s => s.Predstava).FirstOrDefault(s => s.PrikazivanjeId
-                      == b.PrikazivanjeId).Predstava.Naziv));
-
-
+          
 
 
 

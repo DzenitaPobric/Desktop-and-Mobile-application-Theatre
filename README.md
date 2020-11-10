@@ -17,6 +17,14 @@ Desktop:
 
 Mobilna aplikacija:
 
+    Modul administrator:
+
+                     Korisničko ime : administrator
+
+                     Lozinka: test
+                     
+    Modul klijent:
+
                       Korisničko ime: mobile
 
                       Lozinka: test
